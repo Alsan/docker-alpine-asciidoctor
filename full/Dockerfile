@@ -6,7 +6,7 @@ ENV LIBRARY_PATH=/lib:/usr/lib
 ENV BACKENDS /asciidoctor-backends
 ENV GVM_AUTO_ANSWER true
 
-RUN apk add --update --no-cache gcc g++ make bash curl unzip tar openjdk8-jre ruby-dev ruby ruby-nokogiri ruby-json asciidoctor python python-dev py-setuptools py-pip ttf-dejavu libjpeg-turbo libjpeg-turbo-dev zlib zlib-dev zip graphviz && \
+RUN apk add --update --no-cache gcc g++ make bash curl unzip tar openjdk8-jre ruby-dev ruby ruby-nokogiri ruby-json asciidoctor python python-dev py-setuptools py-pip ttf-dejavu libjpeg-turbo libjpeg-turbo-dev zlib zlib-dev zip graphviz su-exec psmisc && \
     gem install --no-ri --no-rdoc asciidoctor-diagram && \
     gem install --no-ri --no-rdoc asciidoctor-pdf --pre && \
     gem install --no-ri --no-rdoc asciidoctor-epub3 --pre && \
@@ -27,9 +27,10 @@ RUN apk add --update --no-cache gcc g++ make bash curl unzip tar openjdk8-jre ru
     /bin/bash -c -l "source ~/.sdkman/bin/sdkman-init.sh && sdk flush archives" && \
     /bin/bash -c -l "source ~/.sdkman/bin/sdkman-init.sh && sdk flush temp" && \
     apk del bash curl unzip tar gcc g++ make ruby-dev python-dev py-pip libjpeg-turbo-dev zlib-dev zip && \
-    rm -rf /tmp/* /var/cache/apk/* ~/.cache/pip
+    rm -rf /tmp/* /var/cache/apk/* ~/.cache/pip && \
+	adduser -D -H default-user
 
 WORKDIR /documents
 VOLUME /documents
 
-CMD ["/bin/sh"]
+CMD ["su-exec", "default-user", "/bin/sh"]
