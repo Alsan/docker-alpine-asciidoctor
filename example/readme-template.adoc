@@ -1,0 +1,44 @@
+== Overview
+
+* Brief description of the project's purpose and main benefit(s)
+* The types of users this project helps
+* Link(s) to other primary help documents and resources
+
+== Operating systems and/or platforms it runs on
+
+Be brief, provide links to more detailed documentation
+
+== Dependency and configuration requirements
+
+Be brief, provide links to more detailed documentation
+
+== List of files/directory structure
+
+Optional depending on the complexity of the project
+
+== Basic installation instructions
+
+Be brief, provide links to more detailed documentation
+
+== Basic usage instructions
+
+Be brief, provide links to more detailed documentation
+
+== Copyright and licensing information
+
+== Author(s)
+
+== Thanks, acknowledgements, and credits
+
+== Basic contact and help information
+
+Provide links
+
+== Bugs
+
+* List of known bugs
+* Instructions on reporting new bugs
+
+== Changelog
+
+== Basic contributing instructions
